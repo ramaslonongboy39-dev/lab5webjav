@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum JavaScript & Eksperimen Mandiri</title>
+    <style>
+        /* Awalnya seluruh body disembunyikan agar layar bersih saat prompt muncul */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+            display: none; 
+        }
+        .section {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        button {
+            margin: 5px 2px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        input[type="number"] {
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pengenalan JavaScript</h1>
+    <p id="pesan">Konten awal.</p>
+
+    <!-- Latihan 6: Form Bilangan Genap/Ganjil -->
+    <div class="section">
+        <h2>Latihan 6: Cek Bilangan Genap/Ganjil</h2>
+        <label for="bilangan">Masukkan bilangan bulat: </label>
+        <input type="number" id="bilangan" step="1">
+        <button type="button" onclick="cekBilangan()">Periksa</button>
+        <p id="hasilBilangan"></p>
+    </div>
+
+    <!-- Latihan 7: Mengubah Warna Latar -->
+    <div class="section">
+        <h2>Latihan 7: Ubah Warna Latar Halaman</h2>
+        <button type="button" onclick="ubahWarnaLatar('lightgreen')">Latar Hijau</button>
+        <button type="button" onclick="ubahWarnaLatar('white')">Latar Putih</button>
+        <button type="button" onclick="ubahWarnaLatar('lightyellow')">Latar Kuning</button>
+        <button type="button" onclick="ubahWarnaLatar('lightblue')">Latar Biru</button>
+    </div>
+
+    <!-- Latihan 8 & Eksperimen 10: Checkbox Menu Makanan -->
+    <div class="section">
+        <h2>Latihan 8 & Eksperimen 10: Daftar Menu Makanan</h2>
+        <h3>Daftar Menu Makanan</h3>
+        <label><input type="checkbox" class="menu" value="5000"> Ayam Goreng Rp5.000</label><br>
+        <label><input type="checkbox" class="menu" value="500"> Tempe Rp500</label><br>
+        <label><input type="checkbox" class="menu" value="2500"> Telur Dadar Rp2.500</label><br>
+        <!-- Tambahan menu baru (Eksperimen Mandiri 10) -->
+        <label><input type="checkbox" class="menu" value="3000"> Es Teh Manis Rp3.000</label><br>
+        <label><input type="checkbox" class="menu" value="4000"> Es Jeruk Rp4.000</label><br>
+        <p>Total: Rp<span id="total">0</span></p>
+    </div>
+
+    <!-- Eksperimen Mandiri 7: Tabel Perkalian Angka 7 -->
+    <div class="section">
+        <h2>Eksperimen Mandiri 7: Tabel Perkalian Angka 7</h2>
+        <button type="button" onclick="tampilkanPerkalian()">Tampilkan Tabel Perkalian</button>
+        <ul id="hasilPerkalian"></ul>
+    </div>
+
+    <!-- Eksperimen Mandiri 11: Tombol Sembunyikan/Tampilkan Elemen -->
+    <div class="section">
+        <h2>Eksperimen Mandiri 11: Toggle Elemen HTML</h2>
+        <button type="button" onclick="toggleKotak()">Sembunyikan/Tampilkan Kotak</button>
+        <div id="kotakToggle" style="margin-top: 10px; padding: 10px; background-color: #f0f0f0; border: 1px dashed #999;">
+            Ini adalah elemen yang bisa disembunyikan atau ditampilkan!
+        </div>
+    </div>
+
+    <!-- Mini Project: Kalkulator Nilai Mahasiswa -->
+    <div class="section">
+        <h2>Mini Project: Kalkulator Nilai Mahasiswa</h2>
+        <form id="formNilai">
+            <label for="tugas">Nilai Tugas (0-100):</label><br>
+            <input type="number" id="tugas" min="0" max="100"><br>
+            <label for="uts">Nilai UTS (0-100):</label><br>
+            <input type="number" id="uts" min="0" max="100"><br>
+            <label for="uas">Nilai UAS (0-100):</label><br>
+            <input type="number" id="uas" min="0" max="100"><br><br>
+            <button type="button" onclick="prosesHitungNilai()">Hitung Nilai Akhir</button>
+        </form>
+        <div id="hasilKalkulator" style="margin-top: 15px;"></div>
+    </div>
+
+    <!-- Menghubungkan ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
